@@ -1,7 +1,7 @@
 // "use client";
 
 import IntroSection from "../../components/IntroSection";
-import Wrapper from "../../components/wrapper";
+import Wrapper from "../../components/Wrapper";
 
 import { FcGoogle } from "react-icons/fc";
 import Button from "../../components/Button";
@@ -15,7 +15,7 @@ export default function page() {
       <section className="py-32">
         <Wrapper>
           <div className="max-w-80 mx-auto">
-            <form action="">
+            {/* <form action="">
               <button className="flex items-center gap-6 text-lg border border-primary-300 px-10 py-4 font-medium">
                 <FcGoogle className="text-2xl" />
                 <span className="text-slate-500">Continue with Google</span>
@@ -25,7 +25,7 @@ export default function page() {
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-4 text-sm text-neutral-500">
                 OR
               </span>
-            </div>
+            </div> */}
             <SignupForm />
             <div className="text-center mt-8 text-neutral-500">
               <span className="text-sm ">Already have an account? </span>

@@ -1,6 +1,5 @@
-import Button from "@/components/Button";
 import IntroSection from "@/components/IntroSection";
-import Wrapper from "@/components/wrapper";
+import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";

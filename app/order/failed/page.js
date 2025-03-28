@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import IntroSection from "@/components/IntroSection";
-import Wrapper from "@/components/wrapper";
+import Wrapper from "@/components/Wrapper";
+import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function page() {
@@ -9,7 +10,7 @@ export default function page() {
       <IntroSection title="Order Failed" bgColor="bg-red-100" />
       <div className="py-32">
         <Wrapper className="max-w-[380px] mx-auto">
-          <img src="/failed.svg" alt="success" className="mx-auto" />
+          <Image src="/failed.svg" alt="success" width={200} height={200} className="mx-auto" />
           <h2 className="text-center text-2xl font-bold mt-8">
             Oops! There was an issue
           </h2>

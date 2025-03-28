@@ -1,8 +1,6 @@
 import IntroSection from "../../components/IntroSection";
-import Wrapper from "../../components/wrapper";
+import Wrapper from "../../components/Wrapper";
 
-import { FcGoogle } from "react-icons/fc";
-import Button from "../../components/Button";
 import Link from "next/link";
 import SigninForm from "../../components/SigninForm";
 
