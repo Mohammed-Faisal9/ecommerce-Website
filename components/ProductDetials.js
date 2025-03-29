@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "./wrapper";
+import Wrapper from "./Wrapper";
 import Image from "next/image";
 import { FaCirclePlay } from "react-icons/fa6";
 
