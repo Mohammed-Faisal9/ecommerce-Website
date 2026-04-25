@@ -1,27 +1,23 @@
-import Hero from "../components/Hero";
-import Features from "../components/Features";
-import TopRating from "../components/TopRating";
-import Cta from "../components/Cta";
-import Products from "../components/Products";
-import Newsletter from "../components/Newsletter";
-import { getAllProducts } from "../actions/getAllProducts";
+
+import OurProducts from "../components/OurProducts";
+import Hero from "@/components/Hero";
+import ChooseUs from "@/components/ChooseUs";
+import { getProducts } from "@/features/products/actions/getProducts";
 
 export const revalidate = 3600;
 
 export default async function Home() {
-  const { products } = await getAllProducts();
+  const { products } = await getProducts();
 
-  const someOfTheProducts = products.slice(0, 8);
+  console.log(products);
+
+  const someOfTheProducts = products?.slice(0, 8);
 
   return (
     <>
       <Hero />
-      <Features />
-      <TopRating products={products} />
-      <Cta />
-      <Products products={someOfTheProducts} title="Our Products" />
-      
-      <Newsletter />
+      <OurProducts products={someOfTheProducts} title="Our Products" />
+      <ChooseUs />
     </>
   );
 }

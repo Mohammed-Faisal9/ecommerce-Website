@@ -1,9 +1,10 @@
-import IntroSection from "../../components/IntroSection";
+import IntroSection from "../../components/BreadCrumb";
 import Wrapper from "../../components/Wrapper";
 import Image from "next/image";
 import { bucktId, projectId } from "../../utils/constant";
-import { getCartItems } from "../../actions/getCartItems";
-import PaymentContent from "@/components/PaymentContent";
+import { getCartItems } from "../../features/cart/actions/getCartItems";
+import Button from "@/components/Button";
+import PaymentButton from "@/features/payment/components/PayNow";
 
 export default async function page() {
   const { items } = await getCartItems();
@@ -15,7 +16,7 @@ export default async function page() {
       <section className="py-16">
         <Wrapper>
           <h1 className="text-2xl font-bold">Checkout</h1>
-          <div className="flex flex-col items-center gap-6 md:flex-row">
+          <div className="flex flex-col items-center gap-6">
             <div className="flex-1">
               {items.map((item) => (
                 <div className="flex items-center gap-4 mt-8" key={item.$id}>
@@ -47,14 +48,14 @@ export default async function page() {
                           item.product_id.price -
                             (item.product_id.price *
                               item.product_id?.discount) /
-                              100
+                              100,
                         )
                       : item.product_id.price}
                   </p>
                 </div>
               ))}
             </div>
-            <PaymentContent />
+            <PaymentButton items={items} />
           </div>
         </Wrapper>
       </section>

@@ -15,7 +15,9 @@ export default function Footer() {
     <footer>
       <Wrapper className="grid gap-y-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[280px_1fr_1fr_1fr_1fr] gap-6 py-12">
         <div className="flex flex-col gap-4">
-          <Image width="163" height="41" src="/logo.svg" alt="logo" />
+          <Link href="/" className="text-2xl font-bold tracking-tight">
+            LUXE
+          </Link>
           <p className="text-neutral-500">
             Created by Mohammed Faisal <br /> Front End Developer
           </p>

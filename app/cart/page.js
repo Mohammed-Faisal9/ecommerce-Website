@@ -1,11 +1,11 @@
 import React from "react";
-import IntroSection from "../../components/IntroSection";
-import MyCart from "../../components/MyCart";
+import BreadCrumb from "../../components/BreadCrumb";
+import MyCart from "../../features/cart/components/MyCart";
 
 export default function page() {
   return (
     <div>
-      <IntroSection title="Cart" />
+      <BreadCrumb title="Cart" />
       <MyCart />
     </div>
   );

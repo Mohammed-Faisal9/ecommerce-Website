@@ -1,8 +1,8 @@
-import IntroSection from "../../components/IntroSection";
+import IntroSection from "../../components/BreadCrumb";
 import Wrapper from "../../components/Wrapper";
 
 import Link from "next/link";
-import SigninForm from "../../components/SigninForm";
+import SigninForm from "../../features/authentiction/components/SigninForm";
 
 export default function page() {
   return (

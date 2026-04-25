@@ -1,9 +1,9 @@
 import Newsletter from "@/components/Newsletter";
-import Product from "@/components/Product";
-import ProductDetials from "@/components/ProductDetials";
-import Products from "@/components/Products";
-import { getSelectedProducts } from "@/actions/getSelectedProducts";
-import { getProduct } from "@/actions/getProduct";
+import Product from "@/features/products/components/Product";
+import ProductDetials from "@/features/products/components/ProductDetials";
+import Products from "@/components/OurProducts";
+import { getSelectedProducts } from "@/features/products/actions/getSelectedProducts";
+import { getProduct } from "@/features/products/actions/getProduct";
 import { bucktId, projectId } from "@/utils/constant";
 
 export default async function page({ params }) {
@@ -17,12 +17,10 @@ export default async function page({ params }) {
   const similarProducts = products?.filter((item) => item.$id !== product?.$id);
   console.log(similarProducts);
 
-  const ImageUrl = `https://cloud.appwrite.io/v1/storage/buckets/${bucktId}/files/${product?.image}/view?project=${projectId}`;
-
   return (
     <div>
-      <Product product={product} image={ImageUrl} />
-      <ProductDetials detials={product?.description} image={ImageUrl} />
+      <Product product={product} />
+      <ProductDetials detials={product?.description} imageId={product?.image} />
       {similarProducts?.length > 0 && (
         <Products products={similarProducts} title="Similar Products" />
       )}

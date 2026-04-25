@@ -1,27 +1,38 @@
 import Image from "next/image";
-import Wrapper from "./Wrapper";
-import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <div className=" bg-neutral-100 py-10 sm:py-0">
-      <Wrapper className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-center sm:justify-between ">
-        <div className="z-10">
-          <h1 className="text-4xl mb-4">Fresh Arrivals Online</h1>
-          <p className="text-neutral-700 mb-8">
-            Discover Our Newest Collection Today.
+    <section className="relative h-[calc(100vh-64px)] bg-gray-900">
+      <div className="absolute inset-0 bg-black opacity-50">
+        <Image
+          src="/hero2.jpg"
+          fill
+          sizes="100vw"
+          priority
+         
+          alt="Hero"
+          className=" object-cover opacity-70"
+        />
+      </div>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="text-center text-white px-4">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
+            Spring Collection 2026
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-gray-200">
+            Discover timeless elegance meets modern design
           </p>
-          <Link href="/categories" className="bg-black text-white px-6 py-3 rounded hover:bg-neutral-800 transition-all">
-            View Collection
-            <FaArrowRight className="inline-block ml-4 text-sm" />
+          <Link
+            href="/shop"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded hover:bg-gray-100 transition-colors"
+          >
+            Shop Now
+            <FaArrowRight className="w-5 h-5" />
           </Link>
         </div>
-        <div className="relative aspect-square max-w-[350px] sm:block hidden">
-          <div className="absolute w-[240px] h-[240px] lg:w-[280px] lg:h-[280px]  bg-neutral-200 rounded-[50%] top-[10%] "></div>
-          <Image width="270" height="620" src="/hero-image.png" alt="hero" className="z-10 relative object-cover min-h-96" />
-        </div>
-      </Wrapper>
-    </div>
+      </div>
+    </section>
   );
 }
